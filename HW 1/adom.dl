@@ -1,0 +1,20 @@
+.decl R(x:symbol, y:symbol)
+.input R
+
+.decl S(x:symbol, y:symbol)
+.input S
+
+.decl T(x:symbol)
+.input T
+
+.decl adom(v:symbol)
+.output adom
+
+adom(x) :- R(x, _).
+
+adom(y) :- R(_, y).
+
+adom(x) :- S(x, _).
+adom(y) :- S(_, y).
+
+adom(x) :- T(x).
