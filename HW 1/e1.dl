@@ -1,0 +1,30 @@
+// Inputs
+.decl R(x:symbol, y:symbol)
+.input R
+
+.decl S(x:symbol, y:symbol)
+.input S
+
+.decl T(x:symbol)
+.input T
+
+// Outputs (we will add rules later)
+.decl q1(x:symbol, y:symbol)
+.output q1
+
+.decl q2()
+.output q2
+
+.decl q3(x:symbol, y:symbol, z:symbol)
+.output q3
+
+.decl q4(x:symbol, b:symbol)
+.output q4
+
+q1(x, y) :- R(x, y), S(y, _).
+
+q2() :- R(x, y), S(y, "a"), T(x).
+
+q3(x, y, z) :- R(x, y), R(y, z), R(z, x).
+
+q4(x, "b") :- R(x, x), S(x, _).
