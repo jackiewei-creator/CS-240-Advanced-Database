@@ -1,0 +1,11 @@
+.decl edge(x:number, y:number)
+.input edge
+
+.decl undirected(x:number, y:number)
+undirected(x, y) :- edge(x, y).
+undirected(x, y) :- edge(y, x).
+
+.decl triangles(x:number, y:number, z:number)
+.output triangles
+
+triangles(x, y, z) :- undirected(x, y), undirected(y, z), undirected(z, x), x < y, y < z.
